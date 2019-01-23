@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color ="danger">
+    <ion-title>
+      Ou allez-vous ?
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Départ</ion-label>
+      <ion-input type="text" [(ngModel)]="Start"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Destination</ion-label>
+      <ion-input type="text" [(ngModel)]="End" (ionInput)="updateSearchResults()"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="calculateAndDisplayRoute()">Go</button>
+
+  </ion-list>
+
+  <div id="map">
+
+  </div>
+</ion-content>
